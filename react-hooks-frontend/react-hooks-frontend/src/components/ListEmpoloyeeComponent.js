@@ -1,9 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import EmployeeService from '../services/EmployeeService'
 
 const ListEmpoloyeeComponent = () => {
 
     const [employee, setEmployee] = useState([])
 
+    useEffect(() => {
+        EmployeeService.getAllEmployees().then((response) => {
+            setEmployee(response.data)
+            console.log(response.data);
+        }).catch(error => {
+            console.log(error);
+        })
+    }, [])
 
   return (
     <div className="container">
@@ -24,7 +33,7 @@ const ListEmpoloyeeComponent = () => {
                             <td> {employee.id} </td>
                             <td> {employee.firstName} </td>
                             <td> {employee.lastName} </td>
-                            <td> {employee.emailId} </td>
+                            <td> {employee.email} </td>
                         </tr>
                     )
                 }
