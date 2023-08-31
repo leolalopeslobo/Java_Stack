@@ -93,9 +93,111 @@ use 'update'
 for deployment and production use
 use 'create' or 'validate'
 
-
+----------------------
+----------------------
 
 2. Creating JPA Entity, JPA Repository and Exception
 
 
+----------------------
+----------------------
+
 3.Building Get all Employee REST API
+
+
+----------------------
+----------------------
+
+4. Creating React Application
+Before creating a React Application make sure that you have installed Node.js and NPM on you machine
+
+To develop React App we are using Visual Studio Code IDE
+
+To create the React Application we are going to use 'create react app cli' on Google
+
+--
+PS C:\Users\leola\OneDrive\Desktop\Java Stack - Copy\react-hooks-frontend> node -v
+v18.16.0
+PS C:\Users\leola\OneDrive\Desktop\Java Stack - Copy\react-hooks-frontend> npm -v
+9.5.1
+PS C:\Users\leola\OneDrive\Desktop\Java Stack - Copy\react-hooks-frontend> npx create-react-app react-hooks-frontend
+--
+Then cd into the directory
+and type npm start the application
+
+
+The 'package.json' file contains all the the dependencies used in the react application
+In the react application there is only one HTML page 'index.html' since react is a single page application, in that there is a div element with id 'root', so all the react components will be dynamically updated in the div. Most of the time we don't the index.html, we may change the header section.
+
+The node_modules, all the packages that we install will go under this folder
+
+The index.js file is the entry point of the react app
+The ReactDOM.render will render the root component
+The <App /> is the may component
+
+App.js is the app component and is the root. All component created within react will be imported here.
+
+
+
+4. Installing BootStrap CSS Library
+To install bootstrap we use:
+PS C:\Users\leola\OneDrive\Desktop\Java Stack - Copy\react-hooks-frontend> cd react-hooks-frontend
+PS C:\Users\leola\OneDrive\Desktop\Java Stack - Copy\react-hooks-frontend\react-hooks-frontend>npm install bootstrap --save
+
+Then import it in index.js
+
+
+5. Create List Employee Component + useState Hook
+
+
+create a folder in src-> components -> ListEmployeeComponent.js
+
+In React we have 2 components
+1. Class Component
+2. Functional Component
+
+In Class component we can define the state but not possible in Functional Component
+Class Component also called Stateful component
+Functional Component also called stateless component
+
+
+To use state in React we use Hooks
+
+The useState is a Hook (function) that allows you to have a state variables in functional components
+
+
+----
+All of the above is the progress until commit 2
+----
+
+
+6. Connect React to Get All Employee REST API
+
+To make this call we use Axios
+and here we are working in the 'services' folder
+
+
+
+PS C:\Users\leola\OneDrive\Desktop\Java Stack - Copy\react-hooks-frontend> npm install axios --save
+
+added 9 packages in 1s
+
+1 package is looking for funding
+  run `npm fund` for details
+
+
+
+Then import in EmployeeService.js
+
+
+
+--
+The 'useEffect' Hook allows us to perform side effects (an action) in the function components
+
+Effect Hooks are equivalent to componentDidMount(), componentDidUpdate(), and componentWillUnmount() lifecycle methods
+--
+
+
+Here we can useEffect hook to make ajax calls
+
+
